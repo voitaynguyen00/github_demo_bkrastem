@@ -1,0 +1,13 @@
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+  <category name="Events" colour="#a55b80">
+    <block type="event1">
+      <field name="tilt"></field>
+    </block>
+    <block type="event2"></block>
+    <block type="event3">
+      <field name="IDsensor"></field>
+      <field name="compare"></field>
+      <field name="distance"></field>
+    </block>
+  </category>
+</xml>

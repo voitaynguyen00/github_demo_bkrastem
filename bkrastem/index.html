@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Demo: Fixed Blockly</title>
+  <script src="blockly_compressed.js"></script>
+  <script src="blocks_compressed.js"></script>
+  <script src="en.js"></script>
+  <script src="custom_compressed.js"></script>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="blocklyDiv" style="height: 700px; width: 960px;"></div>
+	<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
+	  <category name="Events" colour="#a55b80">
+		<block type="event1">
+		  <field name="tilt"></field>
+		</block>
+		<block type="event2"></block>
+		<block type="event3">
+		  <field name="IDsensor"></field>
+		  <field name="compare"></field>
+		  <field name="distance"></field>
+		</block>
+	  </category>
+	
+	<category name="Move" colour="#5b80a5">
+    <block type="move1">
+      <field name="move">w</field>
+      <field name="speed">sl</field>
+      <field name="stop">1</field>
+    </block>
+    <block type="move2">
+      <field name="move">w</field>
+      <field name="speed">sl</field>
+    </block>
+    <block type="move3"></block>
+  </category>
+	</xml>
+	
+  <script>
+
+var options = { 
+	toolbox : toolbox, 
+	collapse : true, 
+	comments : true, 
+	disable : true, 
+	maxBlocks : Infinity, 
+	trashcan : true, 
+	horizontalLayout : false, 
+	toolboxPosition : 'start', 
+	css : true, 
+	media : 'https://blockly-demo.appspot.com/static/media/', 
+	rtl : false, 
+	scrollbars : true, 
+	sounds : true, 
+	oneBasedIndex : true, 
+	grid : {
+		spacing : 20, 
+		length : 1, 
+		colour : '#888', 
+		snap : true
+	}, 
+	zoom : {
+		controls : true, 
+		wheel : true, 
+		startScale : 1, 
+		maxScale : 3, 
+		minScale : 0.3, 
+		scaleSpeed : 1.2
+	}
+};
+
+/* Inject your workspace */ 
+var workspace = Blockly.inject('blocklyDiv', options);
+
+/* Load Workspace Blocks from XML to workspace. Remove all code below if no blocks to load */
+
+/* TODO: Change workspace blocks XML ID if necessary. Can export workspace blocks XML from Workspace Factory. */
+var workspaceBlocks = document.getElementById("workspaceBlocks"); 
+
+/* Load blocks to workspace. */
+Blockly.Xml.domToWorkspace(workspaceBlocks, workspace);
+  </script>
+
+</body>
+</html>
